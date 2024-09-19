@@ -1,6 +1,12 @@
-import Guitar from './components/Guitar';
+import { useState } from 'react'
+import Guitar from './components/Guitar'
 
 function App() {
+  // State
+  const [auth, setAuth] = useState(true)
+  const [total, setTotal] = useState(0)
+  const [cart, setCart] = useState([])
+
   return (
     <>
       <header className="py-5 header">
@@ -8,20 +14,12 @@ function App() {
           <div className="row justify-content-center justify-content-md-between">
             <div className="col-8 col-md-3">
               <a href="index.html">
-                <img
-                  className="img-fluid"
-                  src="./public/img/logo.svg"
-                  alt="imagen logo"
-                />
+                <img className="img-fluid" src="./public/img/logo.svg" alt="imagen logo" />
               </a>
             </div>
             <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
               <div className="carrito">
-                <img
-                  className="img-fluid"
-                  src="./public/img/carrito.png"
-                  alt="imagen carrito"
-                />
+                <img className="img-fluid" src="./public/img/carrito.png" alt="imagen carrito" />
 
                 <div id="carrito" className="bg-white p-3">
                   <p className="text-center">El carrito esta vacio</p>
@@ -38,11 +36,7 @@ function App() {
                     <tbody>
                       <tr>
                         <td>
-                          <img
-                            className="img-fluid"
-                            src="./public/img/guitarra_02.jpg"
-                            alt="imagen guitarra"
-                          />
+                          <img className="img-fluid" src="./public/img/guitarra_02.jpg" alt="imagen guitarra" />
                         </td>
                         <td>SRV</td>
                         <td className="fw-bold">$299</td>
@@ -67,9 +61,7 @@ function App() {
                   <p className="text-end">
                     Total pagar: <span className="fw-bold">$899</span>
                   </p>
-                  <button className="btn btn-dark w-100 mt-3 p-2">
-                    Vaciar Carrito
-                  </button>
+                  <button className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                 </div>
               </div>
             </nav>
@@ -92,13 +84,11 @@ function App() {
 
       <footer className="bg-dark mt-5 py-5">
         <div className="container-xl">
-          <p className="text-white text-center fs-4 mt-4 m-md-0">
-            GuitarLA - Todos los derechos Reservados
-          </p>
+          <p className="text-white text-center fs-4 mt-4 m-md-0">GuitarLA - Todos los derechos Reservados</p>
         </div>
       </footer>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
